@@ -1,0 +1,220 @@
+/* ============================================
+   ZERO DEV - Sistema de Diseño
+   Desde cero hasta el deploy
+   ============================================ */
+
+:root {
+  /* Colores primarios - Identidad ZeroDev */
+  --zero-black: #0a0a0f;
+  --zero-dark: #12121a;
+  --zero-gray-dark: #1e1e2e;
+  --zero-gray: #2d2d44;
+  --zero-gray-light: #4a4a6a;
+  
+  /* Acentos - Fuego que crece desde cero */
+  --fire-primary: #ff6b35;
+  --fire-secondary: #f7931e;
+  --fire-glow: rgba(255, 107, 53, 0.3);
+  
+  /* Texto */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #6a6a7a;
+  
+  /* Tipografía */
+  --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', 'Monaco', monospace;
+  
+  /* Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  
+  /* Bordes */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+  --shadow-fire: 0 0 20px var(--fire-glow);
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--zero-black);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Utilidades comunes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+/* Botones ZeroDev */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--fire-primary), var(--fire-secondary));
+  color: var(--zero-black);
+  box-shadow: var(--shadow-fire);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--fire-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--fire-primary);
+  border: 2px solid var(--fire-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--fire-primary);
+  color: var(--zero-black);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--fire-glow);
+  border: 1px solid var(--fire-primary);
+  color: var(--fire-primary);
+  border-radius: var(--radius-xl);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Cards */
+.card {
+  background: var(--zero-gray-dark);
+  border: 1px solid var(--zero-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--fire-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Navegación base */
+.nav-zero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--zero-gray);
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+
+.nav-zero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--fire-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--fire-primary);
+}
+
+/* Footer base */
+.footer-zero {
+  background: var(--zero-dark);
+  border-top: 1px solid var(--zero-gray);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.footer-zero .brand {
+  color: var(--fire-primary);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Menú hamburguesa en versión final */
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}

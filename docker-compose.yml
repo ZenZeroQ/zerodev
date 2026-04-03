@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  zerodev:
+    image: litespeedtech/openlitespeed:latest
+    container_name: zerodev-server
+    ports:
+      - "8080:80"      # Sitio web
+      - "7080:7080"      # Panel admin (opcional)
+    volumes:
+      - ./landing:/var/www/vhosts/localhost/html/landing
+      - ./portafolio:/var/www/vhosts/localhost/html/portafolio
+      - ./servicios:/var/www/vhosts/localhost/html/servicios
+      - ./proyectos:/var/www/vhosts/localhost/html/proyectos
+      - ./css:/var/www/vhosts/localhost/html/css
+      - ./js:/var/www/vhosts/localhost/html/js
+      - ./images:/var/www/vhosts/localhost/html/images
+      - ./index.html:/var/www/vhosts/localhost/html/index.html
+      #- ./:/var/www/html/          # Todo el proyecto aquí
+      #- ./:/var/www/html/          # Opción A: simple
+      #- ./:/usr/local/lsws/www/  # Opción B: ruta alternativa
+      #- /home/dnlsk/01_DATOS_PERSONALES/20_PROYECTOS/293_DEVIGNIS:/var/www/html
+    environment:
+      - TZ=America/Santiago
+    restart: unless-stopped
