@@ -1,0 +1,269 @@
+/* ============================================
+   ZERO DEV - Componentes Reutilizables
+   ============================================ */
+
+/* ===== NAVEGACIÓN ===== */
+.nav-zero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--zero-gray);
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+
+.nav-zero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--fire-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--fire-primary);
+}
+
+/* ===== HERO BASE ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.hero h1 .accent {
+  color: var(--fire-primary);
+  position: relative;
+}
+
+.hero h1 .accent::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fire-primary), var(--fire-secondary));
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: var(--space-md);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== GRIDS ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--zero-gray-dark);
+  border: 1px solid var(--zero-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--fire-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.card h3 {
+  color: var(--fire-primary);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== PROYECTO CARD ===== */
+.proyecto-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .proyecto-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.proyecto-preview {
+  background: var(--zero-gray-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--zero-gray);
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.proyecto-info h3 {
+  color: var(--fire-primary);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.proyecto-tags {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin: var(--space-md) 0;
+}
+
+/* ===== STEPS / PROCESO ===== */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--fire-primary);
+  color: var(--zero-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 0 auto var(--space-md);
+}
+
+.step h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.step p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+.footer-zero {
+  background: var(--zero-dark);
+  border-top: 1px solid var(--zero-gray);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.footer-zero .brand {
+  color: var(--fire-primary);
+  font-weight: 700;
+}
+
+/* ===== UTILIDADES ===== */
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+.mt-3 { margin-top: var(--space-lg); }
+.mb-1 { margin-bottom: var(--space-sm); }
+.mb-2 { margin-bottom: var(--space-md); }
+.mb-3 { margin-bottom: var(--space-lg); }

@@ -1,0 +1,51 @@
+/* ============================================
+   PORTAFOLIO - Estilos específicos
+   ============================================ */
+
+/* Hero portafolio más compacto */
+.hero-portafolio {
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--zero-dark) 0%, var(--zero-black) 100%);
+}
+
+.hero-portafolio h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+/* Stack tecnológico */
+.stack-section {
+  background: var(--zero-dark);
+}
+
+.tech-item {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.tech-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: var(--space-sm);
+}
+
+.tech-level {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Proyectos */
+.proyectos-section {
+  background: var(--zero-black);
+}
+
+/* Proceso */
+.proceso-section {
+  background: var(--zero-dark);
+}
