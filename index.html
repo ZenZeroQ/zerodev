@@ -5,269 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ZeroDev - Desarrollo web profesional desde cero. Sitios estáticos rápidos, seguros y sin complicaciones.">
   <title>ZeroDev | Desarrollo Web Desde Cero</title>
+  <!-- Variables base (las originales) -->
   <link rel="stylesheet" href="css/zero-variables.css">
-  <style>
-    /* Estilos específicos de landing */
-    .hero-landing {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: var(--space-2xl) var(--space-md);
-      background: 
-        radial-gradient(ellipse at top, var(--fire-glow) 0%, transparent 50%),
-        var(--zero-black);
-    }
-
-    .hero-content h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 8vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: var(--space-md);
-    }
-
-    .hero-content h1 .zero {
-      color: var(--fire-primary);
-      position: relative;
-    }
-
-    .hero-content h1 .zero::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--fire-primary), var(--fire-secondary));
-      border-radius: 2px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto var(--space-xl);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Sección problemas */
-    .problems {
-      background: var(--zero-dark);
-    }
-
-    .problems-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-
-    .problem-card {
-      text-align: center;
-      padding: var(--space-lg);
-    }
-
-    .problem-icon {
-      font-size: 3rem;
-      margin-bottom: var(--space-md);
-      opacity: 0.5;
-    }
-
-    .problem-card h3 {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      margin-bottom: var(--space-sm);
-    }
-
-    .problem-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Sección solución */
-    .solution {
-      background: var(--zero-black);
-    }
-
-    .solution-header {
-      text-align: center;
-      margin-bottom: var(--space-2xl);
-    }
-
-    .solution-header h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: var(--space-md);
-    }
-
-    .solution-header p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
-    }
-
-    .feature-card {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-    }
-
-    .feature-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--fire-glow);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .feature-card h3 {
-      color: var(--fire-primary);
-      font-size: 1.2rem;
-    }
-
-    .feature-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* Precios */
-    .pricing {
-      background: var(--zero-dark);
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-
-    .pricing-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card.featured {
-      border-color: var(--fire-primary);
-      transform: scale(1.05);
-    }
-
-    .pricing-card.featured::before {
-      content: 'MÁS POPULAR';
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: var(--fire-primary);
-      color: var(--zero-black);
-      padding: var(--space-xs) var(--space-md);
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-bottom-left-radius: var(--radius-md);
-    }
-
-    .pricing-header {
-      text-align: center;
-      margin-bottom: var(--space-lg);
-      padding-bottom: var(--space-lg);
-      border-bottom: 1px solid var(--zero-gray);
-    }
-
-    .pricing-name {
-      font-size: 1.3rem;
-      color: var(--text-primary);
-      margin-bottom: var(--space-sm);
-    }
-
-    .pricing-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--fire-primary);
-    }
-
-    .pricing-price span {
-      font-size: 1rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .pricing-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-lg);
-    }
-
-    .pricing-features li {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .pricing-features li::before {
-      content: '✓';
-      color: var(--fire-primary);
-      font-weight: 700;
-    }
-
-    /* CTA final */
-    .cta-final {
-      background: linear-gradient(135deg, var(--fire-primary), var(--fire-secondary));
-      color: var(--zero-black);
-      text-align: center;
-      padding: var(--space-2xl) var(--space-md);
-    }
-
-    .cta-final h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: var(--space-md);
-    }
-
-    .cta-final p {
-      font-size: 1.1rem;
-      margin-bottom: var(--space-xl);
-      opacity: 0.9;
-    }
-
-    .btn-dark {
-      background: var(--zero-black);
-      color: var(--fire-primary);
-      padding: var(--space-md) var(--space-xl);
-      font-size: 1.1rem;
-    }
-
-    .btn-dark:hover {
-      background: var(--zero-dark);
-      transform: scale(1.05);
-    }
-
-    /* Formulario modal (simplificado) */
-    .contact-note {
-      margin-top: var(--space-lg);
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-  </style>
+  <!-- Nuevo archivo de estilos principal con paleta azul -->
+  <link rel="stylesheet" href="css/estilos-azul.css">
 </head>
 <body>
   <!-- Navegación -->
@@ -297,7 +38,7 @@
       </p>
       <div class="hero-cta">
         <a href="#precios" class="btn btn-primary">Ver planes y precios</a>
-        <a href="/portafolio/" class="btn btn-secondary">Ver mi trabajo</a>
+        <a href="/portafolio/" class="btn btn-secondary">Ver nuestro trabajo</a>
       </div>
     </div>
   </section>
@@ -341,7 +82,7 @@
   <section class="section solution" id="servicios">
     <div class="container">
       <div class="solution-header">
-        <h2>La solución: <span style="color: var(--fire-primary);">sitios estáticos</span></h2>
+        <h2>La solución: <span style="color: var(--primary-color);">sitios estáticos</span></h2>
         <p>
           Tecnología moderna que usan Netflix, Nike y Vercel. 
           Ahora disponible para tu negocio, sin costos enterprise.
@@ -357,7 +98,7 @@
         <div class="feature-card card">
           <div class="feature-icon">🛡️</div>
           <h3>Seguridad real</h3>
-          <p>Sin base de datos = nada que hackear. Dormí tranquilo.</p>
+          <p>Sin base de datos = nada que hackear. Duermes tranquilo.</p>
         </div>
         <div class="feature-card card">
           <div class="feature-icon">🔧</div>
@@ -367,17 +108,17 @@
         <div class="feature-card card">
           <div class="feature-icon">📈</div>
           <h3>SEO nativo</h3>
-          <p>Código limpio que Google indexa perfecto. Aparecé en buscadores.</p>
+          <p>Código limpio que Google indexa perfecto. Presencia en buscadores.</p>
         </div>
         <div class="feature-card card">
           <div class="feature-icon">💰</div>
           <h3>Hosting económico</h3>
-          <p>Funciona en cualquier hosting compartido. Ahorrá dinero mensual.</p>
+          <p>Funciona en cualquier hosting compartido. Ahorra dinero mensual.</p>
         </div>
         <div class="feature-card card">
           <div class="feature-icon">✏️</div>
           <h3>Fácil de editar</h3>
-          <p>Cambios simples en texto plano. No necesitás ser programador.</p>
+          <p>Cambios simples en texto plano. No necesitas ser programador.</p>
         </div>
       </div>
     </div>
@@ -398,7 +139,7 @@
         <div class="pricing-card card">
           <div class="pricing-header">
             <div class="pricing-name">Landing Express</div>
-            <div class="pricing-price">$150<span>USD</span></div>
+            <div class="pricing-price">$100.000<span>CLP</span></div>
           </div>
           <ul class="pricing-features">
             <li>1 página optimizada</li>
@@ -415,7 +156,7 @@
         <div class="pricing-card card featured">
           <div class="pricing-header">
             <div class="pricing-name">ZeroDev Pro</div>
-            <div class="pricing-price">$400<span>USD</span></div>
+            <div class="pricing-price">$350.000<span>CLP</span></div>
           </div>
           <ul class="pricing-features">
             <li>Landing + Portafolio integrados</li>
@@ -433,7 +174,7 @@
         <div class="pricing-card card">
           <div class="pricing-header">
             <div class="pricing-name">A medida</div>
-            <div class="pricing-price">$600+<span>USD</span></div>
+            <div class="pricing-price">$500.00+<span>CLP</span></div>
           </div>
           <ul class="pricing-features">
             <li>Todo lo del plan Pro</li>
@@ -453,12 +194,12 @@
   <section class="cta-final" id="contacto">
     <div class="container">
       <h2>¿Listo para tu sitio web?</h2>
-      <p>Respondé algunas preguntas y te envío un presupuesto en menos de 2 horas.</p>
-      <a href="mailto:contacto@ignisgroup.cl?subject=Presupuesto%20ZeroDev&body=Hola%2C%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web.%0A%0AMi%20nombre%3A%20%0AMi%20negocio%3A%20%0AQu%C3%A9%20necesito%3A%20" class="btn btn-dark">
+      <p>Llena un cuestionario y te envío un presupuesto en menos de 24 horas.</p>
+      <a href="mailto:zn.unitas@gmail.com?subject=Presupuesto%20ZeroDev&body=Hola%2C%20quiero%20un%20presupuesto%20para%20mi%20sitio%20web.%0A%0AMi%20nombre%3A%20%0AMi%20negocio%3A%20%0AQu%C3%A9%20necesito%3A%20" class="btn btn-dark">
         Solicitar presupuesto gratis →
       </a>
       <p class="contact-note">
-        📧 contacto@ignisgroup.cl | Respuesta garantizada en 2 horas hábiles
+        📧 zn.unitas@gmail.com | Respuesta garantizada en 24 horas hábiles
       </p>
     </div>
   </section>
@@ -473,7 +214,7 @@
         Un servicio desarrollado en colaboración con <strong>Ignis Group</strong>
       </p>
       <p style="margin-top: var(--space-md);">
-        <a href="/portafolio/" style="color: var(--text-muted);">Conocé mi trabajo</a> • 
+        <a href="/portafolio/" style="color: var(--text-muted);">Conoce nuestro trabajo</a> • 
         <a href="#inicio" style="color: var(--text-muted);">Volver arriba</a>
       </p>
     </div>
